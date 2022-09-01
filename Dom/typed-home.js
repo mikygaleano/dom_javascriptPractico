@@ -1,38 +1,26 @@
 export default function Typehome () {
     
 
-    let arrayCaracteres = 'Michael';
+    function repetirCadena (arrayCaracteres = '') {
+        let separadorCadena = arrayCaracteres.split('');
+        efectoMaquina = setInterval(
+            separadorCadena.forEach(element => {
+                let maquina = element
+                let $texto = document.getElementById("texto").value;
+                let etiqueta = document.createElement("p");
 
-    let separadorCadena = arrayCaracteres.split('');
-
-    let efectoMaquina;
-
-    function repetirCadena () {
-        efectoMaquina = setInterval(separadorCadena.forEach(element => {
-            console.log(element) })
+                etiqueta.outerHTML = maquina;
+                $texto.appendChild(etiqueta);
+            }, 3000)
     
-        ), 5000}
+        )}
 
-    repetirCadena();
+    repetirCadena("Michael");
     
     }
 
     
       
-
-/*function maquina (caracteres = '') {
-    const elemento = document.createElement("p");
-
-    elemento.setAttribute("class", "titulo");
-
-    elemento.outerHTML = caracteres
-
-    const $contenedor = document.querySelector(texto);
-
-    $contenedor.appendChiled(elemento);
-    }    
-maquina('Hola')*/
-
 
      
     
