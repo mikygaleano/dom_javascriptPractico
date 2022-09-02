@@ -11,17 +11,31 @@ function efectoMaquina (arrayCaracteres = [], insertar, set) {
     insertar = arrayCaracteres.forEach
     (Element => etiquetaNueva.innerHTML += Element.split(''))
 
-        set = setInterval(function () {
-        $etiquetaDelDom.appendChild(etiquetaNueva);
-        console.log($etiquetaDelDom)    
-    }, 300)
+    let fragmento = $etiquetaDelDom.appendChild(etiquetaNueva);
+        console.log($etiquetaDelDom)
 
-    
-        let stop = set
+     function set () {
+        fragmento;
+        console.log($etiquetaDelDom);
+    }
+
+    function stop () {
+        clearInterval(set);
+        set = null;
+    }
+
+
+    if (!$etiquetaDelDom) {
+        return set;
+    }
+    else {
+        return stop();
+    }
+
 
 }
 
-efectoMaquina(;
+efectoMaquina();
 
 }     
     
