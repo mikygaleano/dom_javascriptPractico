@@ -1,25 +1,18 @@
-export default function Typehome () {
+export default function Typehome (texto) {
     
+//let $etiquetaDelDom = document.querySelector(texto);
+//let etiquetaNueva = document.createElement('p');
 
-    function repetirCadena (arrayCaracteres = '') {
-        let separadorCadena = arrayCaracteres.split('');
-        efectoMaquina = setInterval(
-            separadorCadena.forEach(element => {
-                let maquina = element
-                let $texto = document.getElementById("texto").value;
-                let etiqueta = document.createElement("p");
 
-                etiqueta.outerHTML = maquina;
-                $texto.appendChild(etiqueta);
-            }, 3000)
-    
-        )}
+function efectoMaquina () {
+    let arrayCaracteres = [
+        'Michael Nicolas Galeano', 'programador',
+        'Full stack developer web'];
+    arrayCaracteres.forEach(Element => console.log(Element.split('')))
+}
+efectoMaquina()
 
-    repetirCadena("Michael");
-    
-    }
-
-    
+}   
       
 
      
