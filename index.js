@@ -13,7 +13,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
 
 })
 
-    Typehome();
+    Typehome(".texto");
 
 
 
