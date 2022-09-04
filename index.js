@@ -11,9 +11,11 @@ d.addEventListener("DOMContentLoaded", (e) => {
 
     scrollTopButton(".scroll-top-bt");
 
+    Typehome(".texto")
+
 })
 
-    Typehome(".texto");
+;
 
 
 

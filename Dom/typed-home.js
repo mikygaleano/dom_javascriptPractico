@@ -1,44 +1,54 @@
 export default function Typehome (texto) {
     
 let $etiquetaDelDom = document.querySelector(texto);
-let etiquetaNueva = document.createElement('p');
+/*let etiquetaNueva = document.createElement('p');*/
+let arrayCaracteres = ['Michael Nicolas Galeano', 'Programador',
+                       'Full stack developer web']
 
 
-function efectoMaquina (arrayCaracteres = [], insertar, set) {
-    arrayCaracteres = [
-    'Michael Nicolas Galeano', 'programador',
-    'Full stack developer web'];
-    insertar = arrayCaracteres.forEach
-    (Element => etiquetaNueva.innerHTML += Element.split(''))
-
-    let fragmento = $etiquetaDelDom.appendChild(etiquetaNueva);
-        console.log($etiquetaDelDom)
-
-     function set () {
-        fragmento;
-        console.log($etiquetaDelDom);
+function delEscritor () {
+  for (let i = 0; i < arrayCaracteres.length; i++) {
+    if (i < 0) {
+      $etiquetaDelDom.innerHTML = arrayCaracteres.substring(0, i++);
+      setTimeout(function () {
+        delEscritor();
+      }, 40)
     }
+  }
+}
 
-    function stop () {
-        clearInterval(set);
-        set = null;
-    }
-
-
-    if (!$etiquetaDelDom) {
-        return set;
-    }
-    else {
-        return stop();
-    }
-
+function maquinaDeEscribir (text, i) {
+  if (i < text.length + 1) {
+    $etiquetaDelDom.innerHTML = text.substring(0, i++);
+    setTimeout(function () {
+      maquinaDeEscribir (text, i++)
+    }, 100)
+  } else if (i === text.length + 1) {
+    setTimeout(function () {
+      delEscritor(text, i)
+    }, 1000);
+  };
 
 }
 
-efectoMaquina();
+function empezarEscribir (i) {
+  if (typeof arrayCaracteres[i] == 'undefined') {
+    setTimeout(function () {
+      empezarEscribir(0);
+    }, 1000)
+  } else if (i < arrayCaracteres[i].length +1) {
+    maquinaDeEscribir(arrayCaracteres[i], 0,function() {
+      empezarEscribir(i + 1)
+    });
+  };
 
-}     
+}
+
+setTimeout(function() {
+  empezarEscribir(0)
+}, 1000)
+
     
 
-
+}
 
